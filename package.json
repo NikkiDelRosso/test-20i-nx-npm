@@ -1,0 +1,24 @@
+{
+  "name": "test-20i-nx-npm",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx run-many --all --target=test",
+    "lint": "nx run-many --all --target=lint",
+    "start:docker": "docker compose -f docker-compose.local.yml up"
+  },
+  "private": true,
+  "dependencies": {
+    "@20i/nx-typescript-workspace": "0.0.1-alpha.8.4"
+  },
+  "devDependencies": {
+    "@20i/eslint-config": "latest",
+    "@nrwl/cli": "14.5.1",
+    "@nrwl/workspace": "14.5.1",
+    "nx": "14.5.1",
+    "prettier": "^2.6.2",
+    "typescript": "~4.7.2"
+  }
+}
