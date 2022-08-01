@@ -1,0 +1,17 @@
+name: Add README to release
+on:
+  release:
+    types:
+      - created
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Add README.md to release (${{ github.ref_type }} ${{ github.ref }})
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: README.md
+          tag: ${{ github.ref }}
